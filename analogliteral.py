@@ -30,6 +30,13 @@ def volume(str):
 	"""
 	return (str.count('|') * str.count('-') * str.count('L'))/27
 
+def hvolume(str):
+	"""Returns the 4-volume of a hypercube written in ASCII.
+
+	Must include 'O', 'L', '-', '|', "/".
+	"""
+	return (str.count('|') * str.count('-') * str.count('L') * str.count('/'))/256
+
 # These examples are included below because their format means they can't be included in traditional
 # doctests.
 assert(area("""
@@ -54,3 +61,22 @@ O    O-----------O
     L|           |
      O-----------O
 """) == 176)
+
+assert(hvolume("""
+     O-----------O      
+    / L           L     
+   /   L           L
+  /     L           L   
+ /       O-----------O 
+O       /           /|  
+|L     /           / |  
+| L   /           /  |  
+|  L /           /   |  
+|   O-----------O    |  
+|   |           |    O  
+O   |           |   /   
+ L  |           |  /    
+  L |           | /     
+   L|           |/
+    O-----------O
+""") == 660)
