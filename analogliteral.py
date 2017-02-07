@@ -7,38 +7,41 @@ Since idea is not mine, feel free to do whatever with this code if you want.
 Only use {'O', 'L', '-', '|'} in your analog literals, please.
 """
 
-"""
-Returns the length of a line written in ASCII.
-
-Must include 'O', '-'.
->>> area("O-----------O")
-11.0
-"""
 def length(str):
+	"""Returns the length of a line written in ASCII.
+
+	Must include 'O', '-'.
+	>>> length("O-----------O")
+	11.0
+	"""
 	return str.count('-')
 
-"""
-Returns the area of a rectangle written in ASCII.
-
-Must include 'O', '-', '|'.
->>> area("""
-O----O
-|    |
-|    |
-|    |
-|    |
-O----O
-""")
-16.0
-"""
 def area(str):
+	"""Returns the area of a rectangle written in ASCII.
+
+	Must include 'O', '-', '|'.
+	"""
 	return (str.count('-') * str.count('|')) / 4
 
-"""
-Returns the volume of a rectangular prism written in ASCII.
+def volume(str):
+	"""Returns the volume of a rectangular prism written in ASCII.
 
-Must include 'O', 'L', '-', '|'.
->>> volume("""
+	Must include 'O', 'L', '-', '|'.
+	"""
+	return (str.count('|') * str.count('-') * str.count('L'))/27
+
+# These examples are included below because their format means they can't be included in traditional
+# doctests.
+assert(area("""
+O----O
+|    |
+|    |
+|    |
+|    |
+O----O
+""") == 16)
+
+assert(volume("""
 O-----------O
 |L           L
 | L           L
@@ -50,9 +53,5 @@ O    O-----------O
    L |           |
     L|           |
      O-----------O
-""")
-176.0
-"""
-def volume(str):
-	return (str.count('|') * str.count('-') * str.count('L'))/27
+""") == 176)
 
