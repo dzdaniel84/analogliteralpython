@@ -4,7 +4,7 @@ Written by Daniel Zhang on February 6, 2017.
 An implementation of this infamous article (http://www.eelis.net/C++/analogliterals.xhtml) in Python.
 Import this into all your code for some extra fun :^)
 Since idea is not mine, feel free to do whatever with this code if you want.
-Only use {'O', 'L', '-', '|'} in your analog literals, please.
+Only use {'O', 'L', '-', '|', '/'} in your analog literals, please.
 """
 
 def length(str):
